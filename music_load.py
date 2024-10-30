@@ -1,4 +1,7 @@
 import streamlit as st
+import numpy as np
 
-st.audio("/music/upload.wav", format="audio/wav", loop=True)
-    
+audio_file = open("/music/upload.wav", "rb")
+audio_bytes = audio_file.read()
+
+st.audio(audio_bytes, format="audio/wav")
