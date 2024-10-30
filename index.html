@@ -5,69 +5,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whispers from tomorrow</title>
     <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Orbitron, sans-serif;
+            font-family: Arial, sans-serif;
+            background-color: #30626b;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
-            background-color: #30626b;
-            flex-direction: column;
-        }
-        h1 {
-          margin-bottom: 20px;
-          color: #c0c0c0;
-        }
-        .bbplayer {
-            width: 80%;
-            max-width: 600px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-        }
-        .bb-rewind, .bb-play, .bb-forward {
-            margin: 5px;
-            cursor: pointer;
-        }
-        .playerWindow {
-            display: flex;
-            align-items: center;
-        }
-        .bb-track-display {
-            display: flex;
-            justify-content: space-between;
-            width: 100%;
-        }
-        .bb-trackTime, .bb-trackLength {
-            font-size: 24px;
-        }
-        .bb-trackTitle, .bb-albumCover {
-            font-size: 18px;
         }
     </style>
 </head>
 <body>
-    <h1>Whispers from tomorrow</h1>
-    <div class="bbplayer">
-      <span class="bb-rewind"></span>
-      <span class="bb-play"></span>
-      <span class="bb-forward"></span>
-      <div class="playerWindow">
-        <div class="bb-track-display">
-          <span class="bb-trackTime">--:--</span>
-          <span class="bb-trackTitle">&nbsp;</span>
-          <span class="bb-trackLength">--:--</span>
-          <span class="bb-albumCover">&nbsp;</span>
-        </div>
-      </div>
-      <audio loop>
-        <source src="/music/upload.wav" type="audio/wav">
-        HTML5 Audio Not Available
-      </audio>
-    </div>
+    <div id="audio-player-container"></div>
+    <script>
+        const audioPlayer = new SoundWave({
+            container: '#audio-player-container',
+            audioSrc: '/music/upload.wav',
+            height: '60px',
+            width: '400px',
+            
+            showVolumeControl: true,
+            showSpeedControl: true,
+            showLoopControl: true,
+            showDownloadControl: true
+        });
+    </script>
 </body>
 </html>
-
-
