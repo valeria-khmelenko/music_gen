@@ -48,18 +48,21 @@
         }
 
         audio {
-            width: calc(100% - 130px); /* Вычитаем ширину изображения и отступы */
+            width: calc(100% - 130px);
         }
 
         @media (max-width: 600px) {
             .audio-container {
                 flex-direction: column;
                 align-items: center;
+                max-width: 600px;
             }
 
             .circle-image {
                 margin-right: 10px;
                 margin-bottom: 20px;
+                border-radius: 50%; 
+                margin-right: 20px;
             }
     </style>
 </head>
